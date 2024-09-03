@@ -4,7 +4,8 @@ package com.robobob.service.impl;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.robobob.entity.FAQEntity;
-import service.FAQService;
+import com.robobob.service.FAQService;
+
 
 import java.io.File;
 import java.io.IOException;
@@ -41,16 +42,6 @@ public class FAQServiceImpl implements FAQService {
     }
 
     @Override
-    public Optional<String> getFaqById(Long id) {
-        FAQEntity entity = FAQEntityList.stream()
-                .filter(FAQEntity -> Objects.equals(FAQEntity.getId(), id))
-                .findAny()
-                .orElse(null);
-        String value = entity == null ? null : entity.getAnswer();
-        return Optional.ofNullable(value);
-    }
-
-    @Override
     public Optional<String> getFaqByQuestion(String question) {
         FAQEntity entity = FAQEntityList.stream()
                 .filter(FAQEntity -> FAQEntity.getQuestion().equalsIgnoreCase((question.toLowerCase())))
@@ -80,8 +71,4 @@ public class FAQServiceImpl implements FAQService {
 
     }
 
-    @Override
-    public List<FAQEntity> fetchAllFaqs() {
-        return FAQEntityList;
-    }
 }

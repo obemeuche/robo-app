@@ -1,7 +1,7 @@
 package com.robobob.service.impl;
 
+import com.robobob.service.FAQService;
 import com.robobob.service.QuestionService;
-import service.FAQService;
 
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
