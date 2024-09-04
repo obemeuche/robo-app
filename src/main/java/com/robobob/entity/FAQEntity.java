@@ -4,13 +4,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
+
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table
+@Entity
 public class FAQEntity {
     @Id
     private Long id;
