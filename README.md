@@ -37,4 +37,7 @@ KEY DECISIONS:
 
 Trade-off: The application functions as intended with Java 8. For compatibility with newer Java versions, the above dependencies must be added to use GraalVM’s JavaScript engine.
 
+N/B: A second engine (algorithm) for attempting arithmetic calculations can be found in the QuestionServiceImpl class. If this is plugged, it works
+for all Java versions.
+
 2.	REST Endpoint: A REST endpoint has been exposed to facilitate the addition of questions and answers to permanent storage. This design choice allows for future expansion and flexibility.
