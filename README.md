@@ -4,9 +4,9 @@ Project Overview
 3.	Port: The application operates on port 8080.
 4.	Data Persistence: Questions and answers are persisted in the faq.json file.
 5.	Database: An H2 database is used to simulate permanent storage, facilitating future storage of questions and answers.
-      To transition to a persistent database, update the database properties in the application.properties file.
+    To transition to a persistent database, update the database properties in the application.properties file.
 6.	Containerization: The project supports containerization through the inclusion of a Dockerfile and a docker-compose.yaml file.
-      Update the database properties in the docker-compose.yaml file as necessary.
+    Update the database properties in the docker-compose.yaml file as necessary.
 7.	CLI Command: Use the --quit keyword to exit the CLI application.
 8.	Architecture: The project follows the Clean Architecture pattern.
 
