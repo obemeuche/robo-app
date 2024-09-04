@@ -39,8 +39,8 @@ class QuestionServiceImplTest {
 
     @Test
     void testHandleUserRequest_faqQuestion() {
-        String question = "What is your return policy?";
-        String expectedAnswer = "Our return policy is 30 days with receipt.";
+        String question = "What is RoboBob?";
+        String expectedAnswer = "RoboBob is an AI assistant.";
 
         when(faqServiceMock.getFaqByQuestion(question)).thenReturn(Optional.of(expectedAnswer));
 

@@ -1,7 +1,6 @@
 package com.robobob;
 
 import com.robobob.controller.ReplController;
-import com.robobob.service.QuestionService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
