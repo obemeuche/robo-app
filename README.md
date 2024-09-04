@@ -20,8 +20,8 @@ Benefits:
 
 KEY DECISIONS:
 1.	JavaScript Script Engine: A JavaScript script engine is used for arithmetic computations in the CLI application.
-      The JavaScript script engine (Nashorn) is included in Java 8 for executing JavaScript code. This engine was removed in Java 15 and later versions.
-      To maintain JavaScript execution capabilities in newer Java versions, you should use GraalVM and include the following dependencies in your pom.xml:
+    The JavaScript script engine (Nashorn) is included in Java 8 for executing JavaScript code. This engine was removed in Java 15 and later versions.
+    To maintain JavaScript execution capabilities in newer Java versions, you should use GraalVM and include the following dependencies in your pom.xml:
 
    <dependency>
         <groupId>org.graalvm.js</groupId>
