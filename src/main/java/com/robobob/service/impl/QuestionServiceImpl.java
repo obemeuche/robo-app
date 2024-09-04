@@ -54,6 +54,8 @@ public class QuestionServiceImpl implements QuestionService {
         }
     }
 
+
+    //this second engine can be plugged and works for all Java versions
     public static double attemptArithmeticViaAlgorithm(final String str) {
         try {
             return new Object() {
