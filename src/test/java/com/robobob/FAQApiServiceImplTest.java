@@ -28,11 +28,9 @@ public class FAQApiServiceImplTest {
 
     @Test
     public void testSaveFaq_Success() {
-        // Arrange
         String question = "What is RoboBob?";
         String answer = "RoboBob is an AI assistant.";
 
-        // Act
         faqService.saveFaq(question, answer);
 
         // Assert
@@ -41,7 +39,6 @@ public class FAQApiServiceImplTest {
 
     @Test
     public void testSaveFaq_Exception() {
-        // Arrange
         String question = "What is RoboBob?";
         String answer = "RoboBob is an AI assistant.";
 

@@ -29,16 +29,14 @@ public class FAQControllerTest {
 
     @Test
     public void testAddQuestionAndAnswer() {
-        // Arrange
+
         FAQDTORequest faqDTORequest = new FAQDTORequest();
         faqDTORequest.setQuestion("What is RoboBob?");
         faqDTORequest.setAnswer("RoboBob is an AI assistant.");
 
-        // Act
         doNothing().when(faqApiService).saveFaq(faqDTORequest.getQuestion(), faqDTORequest.getAnswer());
         ResponseEntity<?> response = faqController.addQuestionAndAnswer(faqDTORequest);
 
-        // Assert
         assertEquals(ResponseEntity.ok().build(), response);
         verify(faqApiService).saveFaq(faqDTORequest.getQuestion(), faqDTORequest.getAnswer());
     }
