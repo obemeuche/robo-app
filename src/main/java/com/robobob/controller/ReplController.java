@@ -7,9 +7,11 @@ import ui.MenuUi;
 
 import java.util.Scanner;
 
+
 public class ReplController {
 
     private final Scanner scanner;
+
     private final QuestionService questionService;
 
     private ReplController(){
@@ -38,8 +40,5 @@ public class ReplController {
         System.out.println(MenuUi.appCursor()+" Thank you for spending time with me!!!");
 
     }
-
-
-
 
 }

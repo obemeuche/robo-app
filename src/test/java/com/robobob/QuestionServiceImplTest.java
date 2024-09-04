@@ -5,10 +5,7 @@ import com.robobob.service.QuestionService;
 import com.robobob.service.impl.QuestionServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 import java.util.Optional;
 
@@ -23,11 +20,13 @@ class QuestionServiceImplTest {
     @BeforeEach
     void setUp() {
         faqServiceMock = mock(FAQService.class);
-        questionService = (QuestionServiceImpl) spy(QuestionServiceImpl.getInstance());
 
-        // Here, we are using reflection to set the mocked FAQService in the questionService
-        // so that attemptFAQ method uses the mocked FAQService.
-        doReturn(faqServiceMock).when(questionService).attemptFAQ(anyString());
+        // Directly instantiate the singleton instance
+        questionService = (QuestionServiceImpl) QuestionServiceImpl.getInstance();
+
+        // Inject the mocked FAQService into the QuestionServiceImpl using reflection
+        // This approach avoids spying and ensures the singleton instance is used correctly.
+        setFaqService(questionService, faqServiceMock);
     }
 
     @Test
@@ -84,4 +83,16 @@ class QuestionServiceImplTest {
 
         assertEquals("Please provide a valid question", result, "An unknown question should return a default message.");
     }
+
+    // Utility method to inject the mocked FAQService into the singleton instance
+    private void setFaqService(QuestionServiceImpl instance, FAQService faqServiceMock) {
+        try {
+            java.lang.reflect.Field faqServiceField = QuestionServiceImpl.class.getDeclaredField("faqService");
+            faqServiceField.setAccessible(true);
+            faqServiceField.set(instance, faqServiceMock);
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
+
